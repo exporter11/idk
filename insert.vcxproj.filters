@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CSGO">
+      <UniqueIdentifier>{84af0b78-9962-4b4e-8e40-3f8d2e4dc009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSGO\interfaces">
+      <UniqueIdentifier>{cc5ee1be-9aad-4dfe-a22f-e0f193536ab0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSGO\netvars">
+      <UniqueIdentifier>{fb87dcfa-6597-4d22-b045-c2fdbe6f0433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSGO\math">
+      <UniqueIdentifier>{63da7169-4920-4cdf-a68d-28dabf2a3a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features">
+      <UniqueIdentifier>{0ce14646-6cf6-4ca5-a71c-06b4de3711e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\misc">
+      <UniqueIdentifier>{80f59496-96a8-4ac1-a15e-83b45dafb26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\aimbot">
+      <UniqueIdentifier>{98db89b1-e811-4a5b-9f04-4f92fb40ff31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSGO\hooks">
+      <UniqueIdentifier>{885e8334-0b2f-4de6-b8f5-ab5f234b2153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{76689cd0-2355-45c7-81ec-3925304c9221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory\vmethod">
+      <UniqueIdentifier>{a6ca77df-1188-4742-b9bc-b3c1d30cf168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory\patternscanner">
+      <UniqueIdentifier>{5a8b24e9-6a29-4915-83ab-33d2e9a049fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory\hook">
+      <UniqueIdentifier>{e200b65d-8f94-4089-89fa-46399b62a5b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="getinterface.cpp">
+      <Filter>CSGO\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="netvarmanager.cpp">
+      <Filter>CSGO\netvars</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>CSGO\math</Filter>
+    </ClCompile>
+    <ClCompile Include="netchannelinfo.h">
+      <Filter>CSGO</Filter>
+    </ClCompile>
+    <ClCompile Include="vmthook.cpp">
+      <Filter>memory\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks.cpp">
+      <Filter>CSGO\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.cpp">
+      <Filter>features\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>features\aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="patternScanner.cpp">
+      <Filter>memory\patternscanner</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="getinterface.h">
+      <Filter>CSGO\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces.h">
+      <Filter>CSGO\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="engineclient.h">
+      <Filter>CSGO</Filter>
+    </ClInclude>
+    <ClInclude Include="vmethod.h">
+      <Filter>memory\vmethod</Filter>
+    </ClInclude>
+    <ClInclude Include="baseclient.h">
+      <Filter>CSGO</Filter>
+    </ClInclude>
+    <ClInclude Include="recv.h">
+      <Filter>CSGO\netvars</Filter>
+    </ClInclude>
+    <ClInclude Include="netvarmanager.h">
+      <Filter>CSGO\netvars</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>CSGO\math</Filter>
+    </ClInclude>
+    <ClInclude Include="gameevents.h">
+      <Filter>CSGO</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>CSGO</Filter>
+    </ClInclude>
+    <ClInclude Include="vmthook.h">
+      <Filter>memory\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.h">
+      <Filter>CSGO\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="usercmd.h">
+      <Filter>CSGO</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>features\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="aimbot.h">
+      <Filter>features\aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="patternScanner.h">
+      <Filter>memory\patternscanner</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

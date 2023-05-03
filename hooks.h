@@ -1,5 +1,5 @@
 #pragma once
 #include "usercmd.h"
 namespace hooks {
-	bool __fastcall hkCreateMove(void* ecx, void* edx, float frametime, CUserCMD* p_cmd);
+	bool __fastcall CreateMoveHk(void* ecx, void* edx, float frametime, CUserCMD* pCmd);
 }

@@ -22,31 +22,32 @@
     <ClCompile Include="aimbot.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="getinterface.cpp" />
+    <ClCompile Include="hook.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="math.cpp" />
+    <ClCompile Include="memedit.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="netchannelinfo.h" />
     <ClCompile Include="netvarmanager.cpp" />
     <ClCompile Include="patternScanner.cpp" />
-    <ClCompile Include="vmthook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aimbot.h" />
     <ClInclude Include="baseclient.h" />
     <ClInclude Include="engineclient.h" />
     <ClInclude Include="entity.h" />
-    <ClInclude Include="gameevents.h" />
     <ClInclude Include="getinterface.h" />
+    <ClInclude Include="hook.h" />
     <ClInclude Include="hooks.h" />
     <ClInclude Include="interfaces.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="memedit.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="netvarmanager.h" />
     <ClInclude Include="patternScanner.h" />
     <ClInclude Include="recv.h" />
     <ClInclude Include="usercmd.h" />
     <ClInclude Include="vmethod.h" />
-    <ClInclude Include="vmthook.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

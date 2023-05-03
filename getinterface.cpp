@@ -1,6 +1,6 @@
 #include "getinterface.h" 
-HANDLE getInterfaceAddress(const char* szModule, const char* szInterface) {
+HANDLE GetInterfaceAddress(const char* szModuleName, const char* szInterface) {
 	typedef HANDLE(*protCreateInterface)(const char*, int*);
-	protCreateInterface CI = (protCreateInterface)GetProcAddress(GetModuleHandle(szModule), "CreateInterface");
-	return CI(szInterface, nullptr);
+	const auto ci = (protCreateInterface)GetProcAddress(GetModuleHandle(szModuleName), "CreateInterface");
+	return ci(szInterface, nullptr);
 }

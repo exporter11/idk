@@ -2,7 +2,6 @@
 #include "engineclient.h"
 #include "getinterface.h"
 #include "baseclient.h"
-#include "gameevents.h"
 #include "entity.h"
 #include "patternScanner.h"
 #define INTERFACE_ENGINE_CLIENT			"VEngineClient014"
@@ -13,16 +12,16 @@
 #define PCLIENTSHAREDPATTERN "\x55\x8B\xEC\x8B\x0D \x8B\x01\x5D\xFF\x60\x30 XEND"
 
 namespace interfaces {
-	inline CEngineClient* p_engine;
-	inline CBaseClientDLL* p_baseclient;
-	inline IClientEntityList* p_entitylist;
-	inline ClientModeShared* p_clientshared;
+	inline CEngineClient* pEngineClient;
+	inline CBaseClientDll* pBaseClientDll;
+	inline IClientEntityList* pEntityList;
+	inline ClientModeShared* pClientModeShared;
 
-	inline void initInterfaces() {
-		p_engine = (CEngineClient*)getInterfaceAddress("engine.dll", INTERFACE_ENGINE_CLIENT);
-		p_baseclient = (CBaseClientDLL*)getInterfaceAddress("client.dll", INTERFACE_BASE_CLIENT_DLL);
-		p_entitylist = (IClientEntityList*)getInterfaceAddress("client.dll", INTERFACE_ENTITY_LIST_CLIENT);
-		patternScanner<DWORD*, DWORD*> pClientShared(PCLIENTSHAREDPATTERN, "client.dll");
-		p_clientshared = *(ClientModeShared**)pClientShared.m_tValue;
+	inline void InitInterfaces() {
+		pEngineClient = (CEngineClient*)GetInterfaceAddress("engine.dll", INTERFACE_ENGINE_CLIENT);
+		pBaseClientDll = (CBaseClientDll*)GetInterfaceAddress("client.dll", INTERFACE_BASE_CLIENT_DLL);
+		pEntityList = (IClientEntityList*)GetInterfaceAddress("client.dll", INTERFACE_ENTITY_LIST_CLIENT);
+		const CPatternScanner<DWORD*, DWORD*> pClientShared(PCLIENTSHAREDPATTERN, "client.dll");
+		pClientModeShared = *(ClientModeShared**)pClientShared.m_tValue;
 	}
 };

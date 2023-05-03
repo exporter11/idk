@@ -45,31 +45,31 @@ class IClientEntity;
 class CBaseEntity;
 
 namespace netvars {
-	inline int m_iHealth;
-	inline int m_fFlags;
-	inline int m_vecOrigin;
-	inline int m_vecViewOffset;
-	inline int m_bIsAlive;
+	inline int offHealth;
+	inline int offFlags;
+	inline int offOrigin;
+	inline int offViewOffset;
+	inline int offLifestate;
 
-	inline void initNetvars() {
-		m_iHealth = getNetvarOffset("DT_BasePlayer", "m_iHealth");
-		m_fFlags = getNetvarOffset("DT_BasePlayer", "m_fFlags");
-		m_vecOrigin = getNetvarOffset("DT_BaseEntity", "m_vecOrigin");
-		m_vecViewOffset = getNetvarOffset("DT_BasePlayer", "m_vecViewOffset[0]");
-		m_bIsAlive = getNetvarOffset("DT_BasePlayer", "m_bIsAlive");
+	inline void InitNetvars() {
+		offHealth = GetNetvarOffset("DT_BasePlayer", "m_iHealth");
+		offFlags = GetNetvarOffset("DT_BasePlayer", "m_fFlags");
+		offOrigin = GetNetvarOffset("DT_BaseEntity", "m_vecOrigin");
+		offViewOffset = GetNetvarOffset("DT_BasePlayer", "m_vecViewOffset[0]");
+		offLifestate = GetNetvarOffset("DT_BasePlayer", "m_lifestate");
 	}
 }
 
 class IClientNetworkable {
 public:
-	virtual IClientUnknown* GetIClientUnknown() = 0;
+	virtual IClientUnknown* getIClientUnknown() = 0;
 };
 class IClientUnknown {
 public:
-	vMethod(IClientNetworkable*, getClientNetworkable, (), (void*), 4, (this));
-	vMethod(IClientRenderable*, getClientRenderable, (), (void*), 5, (this));
-	vMethod(IClientEntity*, getCLientEntity, (), (void*), 6, (this));
-	vMethod(CBaseEntity*, getBaseEntity, (), (void*), 7, (this));
+	vMethod(IClientNetworkable*, getClientNetworkable, (), (void*), 4, (this))
+	vMethod(IClientRenderable*, getClientRenderable, (), (void*), 5, (this))
+	vMethod(IClientEntity*, getCLientEntity, (), (void*), 6, (this))
+	vMethod(CBaseEntity*, getBaseEntity, (), (void*), 7, (this))
 };
 class IClientRenderable {
 public:
@@ -82,11 +82,12 @@ public:
 };
 class CBaseEntity {
 public:
-	netvar_func(int, getHealth, netvars::m_iHealth);
-	netvar_func(unsigned int, getFlags, netvars::m_fFlags);
-	netvar_func(Vector, getOrigin, netvars::m_vecOrigin);
-	netvar_func(Vector, getViewOffset, netvars::m_vecViewOffset);
-	netvar_func(bool, isAlive, netvars::m_bIsAlive);
+	NETVAR_FUNC(int, getHealth, netvars::offHealth)
+	NETVAR_FUNC(unsigned int, getFlags, netvars::offFlags)
+	NETVAR_FUNC(Vector, getOrigin, netvars::offOrigin)
+	NETVAR_FUNC(Vector, getViewOffset, netvars::offViewOffset)
+	NETVAR_FUNC(bool, getLifeState, netvars::offLifestate)
+
 	Vector getEyePosition() {
 		return getOrigin() + getViewOffset();
 	}
@@ -94,16 +95,16 @@ public:
 
 class IClientEntityList {
 public:
-	virtual IClientNetworkable* getClientNetworkable(int entnum) = 0;
-	CBaseEntity* getBaseEntity(int ent_num) {
-			IClientNetworkable* client_networkable = getClientNetworkable(ent_num);
-			if (!client_networkable)
-				return 0;
+	virtual IClientNetworkable* getClientNetworkable(int entNum) = 0;
+	CBaseEntity* getBaseEntity(int entNum) {
+			IClientNetworkable* clientNetworkable = getClientNetworkable(entNum);
+			if (!clientNetworkable)
+				return nullptr;
 
-			IClientUnknown* client_unknown = client_networkable->GetIClientUnknown();
-			if (!client_unknown)
-				return 0;
+			IClientUnknown* clientUnknown = clientNetworkable->getIClientUnknown();
+			if (!clientUnknown)
+				return nullptr;
 
-			return client_unknown->getBaseEntity();
+			return clientUnknown->getBaseEntity();
 	}
 };

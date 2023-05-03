@@ -2,15 +2,20 @@
 #include "interfaces.h"
 #include "misc.h"
 #include "aimbot.h"
-
-bool __fastcall hooks::hkCreateMove(void* ecx, void* edx, float frametime, CUserCMD* pCmd) {
-	CBaseEntity* pLocal = interfaces::p_entitylist->getBaseEntity(interfaces::p_engine->getLocalPlayer());
+#include <iostream>
+bool __fastcall hooks::CreateMoveHk(void* ecx, void* edx, float frametime, CUserCMD* pCmd) {
+	CBaseEntity* pLocal = interfaces::pEntityList->getBaseEntity(interfaces::pEngineClient->getLocalPlayer());
 
 	if (!pLocal)
 		return true;
 
-	miscFeatures::doMiscFeatures(pCmd, pLocal);
-	aimbotFeatures::doAimbot(pCmd, pLocal);
+	void* stack;
+	__asm mov stack, esp;
+
+	//std::cout << stack << '\n';
+
+	misc_features::DoMiscFeatures(pCmd, pLocal);
+	aim_bot_features::DoAimBot(pCmd, pLocal);
 
 	return true;
 }

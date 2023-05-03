@@ -1,9 +1,9 @@
 #pragma once
 #include "usercmd.h"
 #include "entity.h" 
-namespace miscFeatures {
-	void autoBunnyHop(CUserCMD* pCmd, CBaseEntity* pLocal);
-	void fastDuck(CUserCMD* pCmd);
-	void doMiscFeatures(CUserCMD* pCmd, CBaseEntity* pLocal);
+namespace misc_features {
+	void AutoBunnyHop(CUserCMD* pCmd, CBaseEntity* pLocal);
+	void FastDuck(CUserCMD* pCmd);
+	void DoMiscFeatures(CUserCMD* pCmd, CBaseEntity* pLocal);
 };
 

@@ -30,9 +30,9 @@
 
 class CUserCMD {
 public:
-	virtual void vacpwnsmeandall() = 0;
+	virtual void vmt() = 0;
 	int		command_number;
-	int		tick_count;
+	int		tickCount;
 	QAngle	viewangles;
 	Vector	aimdirection;
 	float	forwardmove;

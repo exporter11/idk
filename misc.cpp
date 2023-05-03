@@ -1,15 +1,15 @@
 #include "misc.h"
 
-void miscFeatures::doMiscFeatures(CUserCMD* pCmd, CBaseEntity* pLocal) {
-	autoBunnyHop(pCmd, pLocal);
-	fastDuck(pCmd);
+void misc_features::DoMiscFeatures(CUserCMD* pCmd, CBaseEntity* pLocal) {
+	AutoBunnyHop(pCmd, pLocal);
+	FastDuck(pCmd);
 }
 
-void miscFeatures::fastDuck(CUserCMD* pCmd) {
+void misc_features::FastDuck(CUserCMD* pCmd) {
 	pCmd->buttons |= IN_BULLRUSH;
 }
 
-void miscFeatures::autoBunnyHop(CUserCMD* pCmd, CBaseEntity* pLocal) {
+void misc_features::AutoBunnyHop(CUserCMD* pCmd, CBaseEntity* pLocal) {
 	if (!(pCmd->buttons & IN_JUMP))
 		return;
 

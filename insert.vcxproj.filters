@@ -28,14 +28,14 @@
     <Filter Include="memory">
       <UniqueIdentifier>{76689cd0-2355-45c7-81ec-3925304c9221}</UniqueIdentifier>
     </Filter>
-    <Filter Include="memory\vmethod">
-      <UniqueIdentifier>{a6ca77df-1188-4742-b9bc-b3c1d30cf168}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="memory\patternscanner">
-      <UniqueIdentifier>{5a8b24e9-6a29-4915-83ab-33d2e9a049fb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="memory\hook">
-      <UniqueIdentifier>{e200b65d-8f94-4089-89fa-46399b62a5b4}</UniqueIdentifier>
+      <UniqueIdentifier>{9f94fdbc-0285-42e6-8402-895ad4bb5187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory\bytespatching">
+      <UniqueIdentifier>{93a3dce6-6aa7-476f-85f6-d633f84247fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory\patterscanning">
+      <UniqueIdentifier>{f7fe55fb-8810-4bb4-a480-f5332d68e7f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,9 +52,6 @@
     <ClCompile Include="netchannelinfo.h">
       <Filter>CSGO</Filter>
     </ClCompile>
-    <ClCompile Include="vmthook.cpp">
-      <Filter>memory\hook</Filter>
-    </ClCompile>
     <ClCompile Include="hooks.cpp">
       <Filter>CSGO\hooks</Filter>
     </ClCompile>
@@ -64,8 +61,14 @@
     <ClCompile Include="aimbot.cpp">
       <Filter>features\aimbot</Filter>
     </ClCompile>
+    <ClCompile Include="hook.cpp">
+      <Filter>memory\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="memedit.cpp">
+      <Filter>memory\bytespatching</Filter>
+    </ClCompile>
     <ClCompile Include="patternScanner.cpp">
-      <Filter>memory\patternscanner</Filter>
+      <Filter>memory\patterscanning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="engineclient.h">
       <Filter>CSGO</Filter>
-    </ClInclude>
-    <ClInclude Include="vmethod.h">
-      <Filter>memory\vmethod</Filter>
     </ClInclude>
     <ClInclude Include="baseclient.h">
       <Filter>CSGO</Filter>
@@ -93,14 +93,8 @@
     <ClInclude Include="math.h">
       <Filter>CSGO\math</Filter>
     </ClInclude>
-    <ClInclude Include="gameevents.h">
-      <Filter>CSGO</Filter>
-    </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>CSGO</Filter>
-    </ClInclude>
-    <ClInclude Include="vmthook.h">
-      <Filter>memory\hook</Filter>
     </ClInclude>
     <ClInclude Include="hooks.h">
       <Filter>CSGO\hooks</Filter>
@@ -114,8 +108,17 @@
     <ClInclude Include="aimbot.h">
       <Filter>features\aimbot</Filter>
     </ClInclude>
+    <ClInclude Include="vmethod.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="hook.h">
+      <Filter>memory\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="memedit.h">
+      <Filter>memory\bytespatching</Filter>
+    </ClInclude>
     <ClInclude Include="patternScanner.h">
-      <Filter>memory\patternscanner</Filter>
+      <Filter>memory\patterscanning</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
